@@ -1,0 +1,17 @@
+# Автоконвертация текстовых файлов
+* text=auto
+
+# Python-файлы всегда используют LF
+*.py text eol=lf
+*.toml text eol=lf
+*.lock text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+
+# Shell-скрипты всегда LF
+*.sh text eol=lf
+
+# Windows-файлы используют CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf

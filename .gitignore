@@ -1,0 +1,57 @@
+# --- СЕКРЕТЫ И КОНФИГУРАЦИЯ ---
+# Никогда не отправляем реальные пароли!
+.env
+.env.local
+.env.*.local
+
+# --- ВИРТУАЛЬНОЕ ОКРУЖЕНИЕ (uv / venv) ---
+# Оно весит много и привязано к вашей Windows, другим оно не нужно
+.venv/
+venv/
+env/
+
+# --- КЭШ И СБОРКА PYTHON ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- ФАЙЛЫ IDE (VS Code / PyCharm) ---
+# Они хранят ваши личные настройки окна, другим разработчикам они не нужны
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- ОС (Windows/Mac/Linux) ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# --- UV SPECIFIC ---
+# uv.lock ОБЯЗАТЕЛЬНО ОСТАВЛЯЕМ! (Это аналог package-lock.json, он нужен для стабильности)
+# Но игнорируем кэш uv, если он создается локально (обычно он глобальный, но на всякий случай)
+.uv/
