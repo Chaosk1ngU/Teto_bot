@@ -6,7 +6,7 @@ import logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 # 🔧 ЗАМЕНИТЕ НА ВАШ ID ГРУППЫ (обязательно с -100)
-GROUP_CHAT_ID = -1003313006208
+GROUP_CHAT_ID = id
 
 async def post_init(application):
     application.bot_data['running'] = True
@@ -111,7 +111,7 @@ async def handle_group_reply(update: Update, context: ContextTypes.DEFAULT_TYPE)
         await update.message.reply_text("❌ Ошибка: пользователь заблокировал бота или удалил чат.")
 
 if __name__ == '__main__':
-    application = ApplicationBuilder().token('8655674139:AAHbp_iUcI80_6twOiIZH1dNANXjG4YYBM4').post_init(post_init).build()
+    application = ApplicationBuilder().token('token').post_init(post_init).build()
 
     application.add_handler(CommandHandler('start', start))
     application.add_handler(CommandHandler('caps', caps))
