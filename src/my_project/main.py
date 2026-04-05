@@ -49,8 +49,18 @@ async def forward_to_group(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         # Сохраняем связь: ID сообщения в группе -> ID пользователя
         context.bot_data['msg_map'][sent_msg.message_id] = user_id
+        
+        # ✅ Отправляем подтверждение пользователю
+        await context.bot.send_message(
+            chat_id=user_id,
+            text="✅ Ваше сообщение было успешно отправлено!"
+        )
     except Exception as e:
         logging.error(f"Ошибка пересылки в группу: {e}")
+        await context.bot.send_message(
+            chat_id=user_id,
+            text="❌ Произошла ошибка при отправке сообщения. Попробуйте позже."
+        )
 
 async def caps(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not context.bot_data.get('running', True): return
